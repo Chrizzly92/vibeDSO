@@ -8,7 +8,7 @@ vibeDSO is a fully vibe-coded, custom C++ firmware and a standalone Windows desk
 
 ## Downloads
 
-**[Download vibeDSO v0.37](https://github.com/Chrizzly92/vibeDSO/releases/tag/v0.37)** — initial public pre-release.
+**[Download vibeDSO v0.37](https://github.com/Chrizzly92/vibeDSO/releases/tag/Release)** — initial public pre-release.
 
 | Package | Contents |
 | --- | --- |
