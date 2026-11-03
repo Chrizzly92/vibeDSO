@@ -2,6 +2,10 @@
 
 vibeDSO is a fully vibe-coded, custom C++ firmware and a standalone Windows desktop application for the DSO138 oscilloscope (STM32F103C8 / ILI9341).
 
+![vibeDSO startup screen](docs/images/splash.png)
+
+*Startup screen rendered by the firmware LCD model.*
+
 ## Downloads
 
 **[Download vibeDSO v0.37](https://github.com/Chrizzly92/vibeDSO/releases/tag/v0.37)** — initial public pre-release.
@@ -18,10 +22,6 @@ See the [release notes](docs/releases/v0.37.md) for setup and validation limits,
 The project uses the published JYE source package for board support; source for OEM firmware 113-13801-061 was not available. I used AI to develop a replacement tailored to my hardware modifications and the features I needed.
 
 It is **not** a bit-identical reconstruction of OEM Firmware 113-13801-061.
-
-![vibeDSO startup screen](docs/images/splash.png)
-
-*Startup screen rendered by the firmware LCD model.*
 
 ## Features
 
