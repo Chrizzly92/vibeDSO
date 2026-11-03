@@ -20,3 +20,11 @@ Build release assets with `python tools/package_release.py`; add
 `--desktop PATH_TO_EXE` for a Windows package. Attach the resulting source,
 firmware and Windows ZIPs to a GitHub Release. Keep generated binaries out of the
 source tree, and include the supplied licenses and NOTICE with distributions.
+
+## Release description
+
+The English description for v0.37 is in [releases/v0.37.md](releases/v0.37.md).
+Copy its Markdown into the description when editing the
+[v0.37 release](https://github.com/Chrizzly92/vibeDSO/releases/tag/v0.37), then save
+the release. Pushing commits through GitHub Desktop updates repository files;
+it does not automatically update the GitHub Release description.
