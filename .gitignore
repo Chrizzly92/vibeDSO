@@ -1,0 +1,14 @@
+# Generated firmware, host tests and desktop bundles
+/build/
+/analysis/
+/dist/
+/.venv/
+__pycache__/
+*.py[cod]
+*.spec
+*.log
+*.tmp
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db

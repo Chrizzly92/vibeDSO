@@ -1,0 +1,30 @@
+vibeDSO
+Copyright 2026 Chrizzly92
+Original project: https://github.com/Chrizzly92/vibeDSO
+
+vibeDSO was originally developed by Chrizzly92. It includes new firmware,
+desktop software and modifications to the JYE Tech DSO138 board/UI code.
+The original project attribution above is part of this NOTICE.
+
+JYE-derived board/UI code, API declarations and LCD font:
+Copyright (C)2014 JYE Tech Ltd., All right reserved
+Original package: DSO138 source codes 113-13801-037.
+Permission and original notices: vendor/JYE-LICENSE.txt.
+
+Official STM32F1 CMSIS device headers and system support:
+Copyright (c) 2017-2021 STMicroelectronics. All rights reserved.
+Licensed under Apache-2.0; see vendor/cmsis-device-f1/License.md.
+
+Arm CMSIS-Core 5.9.0:
+Copyright (c) 2009-2021 Arm Limited. All rights reserved.
+Individual file years vary; original notices are retained in the headers.
+Licensed under Apache-2.0; see vendor/cmsis-core/LICENSE.txt.
+
+Firmware runtime libraries: newlib, libgloss and GCC libgcc.
+See docs/firmware-licenses for the supplied notices and GCC Runtime Library
+Exception. These components are not relicensed as vibeDSO code.
+
+The standalone desktop bundles Python, Tcl/Tk, pyserial and PyInstaller
+runtime components. Their notices and terms are in docs/pc-licenses.
+
+This NOTICE is informational and does not modify any license.

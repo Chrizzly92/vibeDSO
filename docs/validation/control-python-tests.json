@@ -1,0 +1,5 @@
+{
+  "passed": 9,
+  "exit_code": 0,
+  "scope": "Actual C++ replies, interleaved display/control decoding, bounded queue and actual threaded serial worker against a fake channel; no physical COM validation."
+}

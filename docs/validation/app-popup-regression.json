@@ -1,0 +1,11 @@
+{
+  "passed": 4,
+  "exit_code": 0,
+  "checks": [
+    "Actual Tk popdown produces the formerly fatal focus KeyError",
+    "State update survives actual native dropdown focus",
+    "Readback updates while active dropdown selection stays unchanged",
+    "Normal readback resumes after dropdown closes"
+  ],
+  "scope": "Actual native Tk dropdown and state readback; no serial connection opened."
+}

@@ -1,0 +1,23 @@
+{
+  "passed": 15,
+  "exit_code": 0,
+  "checks": [
+    "normal startup never requests ROM entry",
+    "single keys and extra held keys cannot request ROM entry",
+    "plus-minus must remain stable for forty one-ms samples",
+    "release and bounce restart the boot chord debounce",
+    "valid C8 ROM vectors accepted at supported boundaries",
+    "actual F103 ROM vector with four-byte-aligned initial MSP accepted",
+    "invalid or non-word-aligned stack pointers rejected",
+    "non-ROM or non-Thumb entry points rejected",
+    "handoff preparation completes after modeled HSI switch",
+    "SysTick and all implemented NVIC banks disabled and pending IRQs cleared",
+    "clock and used peripherals return to reset configuration without active DMA",
+    "generator and inverter remain driven low during ROM update",
+    "LCD inactive strobes stay high and vector table points at ROM",
+    "missing HSI readiness aborts safely without selecting ROM vectors",
+    "failed clock switch has bounded timeout before ROM jump"
+  ],
+  "scope": "Boot chord, ROM vector guards and shared hardware handoff register model. ARM tail jump inspected in linked disassembly; actual ROM execution requires hardware validation.",
+  "profile": "source"
+}

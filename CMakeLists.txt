@@ -1,0 +1,45 @@
+# Copyright 2026 Chrizzly92. SPDX-License-Identifier: Apache-2.0
+cmake_minimum_required(VERSION 3.21)
+project(dso138_cpp LANGUAGES C CXX ASM)
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 17)
+set(DSO_ENGINE "source" CACHE STRING "source or legacy")
+set_property(CACHE DSO_ENGINE PROPERTY STRINGS source legacy)
+if(DSO_ENGINE STREQUAL "legacy" AND NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/vendor/libdso138.a")
+ message(FATAL_ERROR "The optional legacy reference library is not included. Use DSO_ENGINE=source.")
+endif()
+option(DSO_DISPLAY_TEST "Build static LCD test instead of scope" OFF)
+if(NOT DSO_ENGINE MATCHES "^(source|legacy)$")
+ message(FATAL_ERROR "DSO_ENGINE must be source or legacy")
+endif()
+set(SRC src/113-13801.cpp src/Board.cpp src/Common.cpp src/Command.cpp
+ src/Screen.cpp src/Eeprom.cpp src/flash.cpp src/stm32f10x_it.cpp src/runtime.cpp
+ src/startup_stm32f10x_md.S src/display_test.cpp src/power.cpp src/bootloader.cpp)
+if(DSO_ENGINE STREQUAL "source")
+ list(APPEND SRC src/engine.cpp src/link.cpp)
+endif()
+set(LIB vendor)
+list(APPEND SRC ${LIB}/cmsis-device-f1/Source/Templates/system_stm32f1xx.c)
+add_executable(dso138 ${SRC})
+set_target_properties(dso138 PROPERTIES SUFFIX .elf)
+target_include_directories(dso138 PRIVATE src ${LIB}/cmsis-core/Include ${LIB}/cmsis-device-f1/Include)
+target_compile_definitions(dso138 PRIVATE STM32F10X_MD HSE_VALUE=8000000UL STM32F103xB=1)
+if(DSO_DISPLAY_TEST)
+ target_compile_definitions(dso138 PRIVATE DSO_DISPLAY_TEST=1)
+endif()
+if(DSO_ENGINE STREQUAL "source")
+ target_compile_definitions(dso138 PRIVATE DSO_SOURCE_ENGINE=1)
+else()
+ target_compile_definitions(dso138 PRIVATE DSO_LEGACY_ENGINE=1)
+ target_link_libraries(dso138 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/vendor/libdso138.a)
+endif()
+target_compile_options(dso138 PRIVATE -mcpu=cortex-m3 -mthumb -Os -g3 -Wall -Wextra -ffunction-sections -fdata-sections -fno-common
+ "$<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions;-fno-rtti;-fno-threadsafe-statics;-fno-use-cxa-atexit;-include;${CMAKE_CURRENT_SOURCE_DIR}/src/abi.hpp>")
+target_link_options(dso138 PRIVATE -mcpu=cortex-m3 -mthumb -nostartfiles --specs=nano.specs --specs=nosys.specs
+ -T${CMAKE_CURRENT_SOURCE_DIR}/stm32f103.ld -Wl,--gc-sections,--print-memory-usage -Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/dso138.map)
+target_link_libraries(dso138 PRIVATE m c gcc)
+set_property(TARGET dso138 APPEND PROPERTY LINK_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/stm32f103.ld)
+add_custom_command(TARGET dso138 POST_BUILD
+ COMMAND ${CMAKE_OBJCOPY} -O ihex $<TARGET_FILE:dso138> ${CMAKE_CURRENT_BINARY_DIR}/dso138.hex
+ COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:dso138> ${CMAKE_CURRENT_BINARY_DIR}/dso138.bin
+ COMMAND ${CMAKE_SIZE} $<TARGET_FILE:dso138>)

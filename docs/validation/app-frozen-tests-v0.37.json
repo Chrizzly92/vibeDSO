@@ -1,0 +1,25 @@
+{
+  "passed": 18,
+  "exit_code": 0,
+  "checks": [
+    "default baud",
+    "controls disabled before handshake",
+    "bundled font and Tk rasterizer load",
+    "scene decoder renders 300 columns",
+    "persistent scaled bitmap keeps waveform through repeated redraws",
+    "confirmed state populates controls",
+    "internal dropdown focus cannot stop readback or overwrite active dropdown",
+    "generator command wired",
+    "invalid generator rejected",
+    "normalized HP command",
+    "English edge choices preserve wire command mapping",
+    "English cursor choices preserve wire command mapping",
+    "English Debug selection preserves focus mapping",
+    "next GUI poll survives an unexpected event-processing error",
+    "original project attribution accessible in application",
+    "full Apache license accessible in application",
+    "bundled desktop dependency notices accessible in application",
+    "PNG export without extra dependencies"
+  ],
+  "scope": "Actual Tk application and frozen executable smoke test using native C++ scene; no physical COM transfer."
+}

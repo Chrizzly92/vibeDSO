@@ -1,0 +1,5 @@
+{
+  "passed": 6,
+  "exit_code": 0,
+  "scope": "Eleven actual C++ incremental display rasters compared pixel-for-pixel with PC renderer; fragmentation, CRC recovery, geometry and time axis. No physical UART or GUI timing validation."
+}
