@@ -60,9 +60,8 @@ The cursor footer shows the selected separation and **1/Δt**; it is separate fr
 
 ### Differences
 
-This firmware mainly adds quality-of-life features. One is active PWM feedback for the **raw negative supply before U4**, targeting approximately **−8 V**. U4 then regulates this to **−5 V**. The firmware does not measure or directly regulate the −5 V output itself.
-
-Development used a USB-powered board retaining U4. Full operation on an unmodified stock board has not been validated. The author's USB modification connects VBUS to the +5 V rail and bypasses U5's **input and output nets** after removing the regulator. Physical pin positions depend on the board/regulator variant. This is a board-specific modification, not a universal two-step recipe: the original higher-voltage input path must not be able to feed the USB/+5 V rail. See [USB power modification notes](docs/USB_POWER.md) before reproducing it.
+This firmware mainly adds quality-of-life features. One is active PWM feedback for the **raw negative supply before U4**, targeting approximately **−8 V**. U4 then regulates this to **−5 V**.
+Development used a USB-powered board retaining U4. Full operation on an unmodified stock board has not been validated. This hardware USB modification connects VBUS to the +5 V rail and bypasses U5's **input and output nets** after removing the regulator. Physical pin positions depend on the board/regulator variant. This is a board-specific modification, not a universal two-step recipe: the original higher-voltage input path must not be able to feed the USB/+5 V rail. See [USB power modification notes](docs/USB_POWER.md) before reproducing it.
 
 Also, vibeDSO adds highlighted menu fields, zero/trigger arrows and reference lines, normalized H position, accelerated button repeat, clipping indicators and peak-preserving roll rendering.
 
