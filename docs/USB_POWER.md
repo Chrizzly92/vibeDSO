@@ -1,6 +1,6 @@
 # USB power: board-specific modification notes
 
-The author reports operating a modified DSO138 from USB 5 V while retaining U4 (79L05). These notes clarify the described wiring; they are not a verified modification guide for every DSO138 or clone revision.
+This software is operating on a modified DSO138 from 5V USB while retaining U4 (79L05). These notes clarify the described wiring; they are not a verified modification guide for every DSO138 or clone revision.
 
 ## What the firmware controls
 
