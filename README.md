@@ -96,6 +96,15 @@ OEM references: [DSO138 specifications](https://jyetech.com/dso-138-oscilloscope
 
 The shared sample-rate figure is nominal; it does not establish identical accuracy or timing. See [Validation](#validation) for the current limits.
 
+## TODO
+Software is good enough as-is for my use cases, but if anyone wan't to contribute using their brain (or AI credits), feel free to do so! The following things are planned though:
+
+-add support for other display versions;
+
+-gather more calibration data, especially for the 10mV range;
+
+-improving ADC-behaviour and signal noise
+
 
 
 ## Build the firmware
