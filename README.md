@@ -8,9 +8,10 @@ vibeDSO is a fully vibe-coded, custom C++ firmware and a standalone Windows desk
 
 | Package | Contents |
 | --- | --- |
-| [Firmware](https://github.com/Chrizzly92/vibeDSO/releases/download/v0.37/vibeDSO-v0.37-firmware.zip) | Flashable HEX for the STM32F103C8 / ILI9341 DSO138, with license notices |
-| [Windows application](https://github.com/Chrizzly92/vibeDSO/releases/download/v0.37/vibeDSO-v0.37-Windows.zip) | Standalone EXE; no Python installation required |
-| [Source code](https://github.com/Chrizzly92/vibeDSO/releases/download/v0.37/vibeDSO-v0.37-source.zip) | Firmware and desktop sources, build tools, documentation and licenses |
+| [Firmware](https://github.com/Chrizzly92/vibeDSO/releases/download/Release/vibeDSO-v0.37-firmware.zip) | Flashable HEX for the STM32F103C8 / ILI9341 DSO138, with license notices |
+| [Firmware](https://github.com/Chrizzly92/vibeDSO/releases/download/Release/dso138.bin) | Flashable BIN for the STM32F103C8 / ILI9341 DSO138 |
+| [Windows application](https://github.com/Chrizzly92/vibeDSO/releases/download/Release/vibeDSO-v0.37-Windows.zip) | Standalone EXE; no Python installation required |
+| [Source code](https://github.com/Chrizzly92/vibeDSO/releases/download/Release/vibeDSO-v0.37-source.zip) | Firmware and desktop sources, build tools, documentation and licenses |
 
 See the [release notes](docs/releases/v0.37.md) for setup and validation limits, or browse [all releases](https://github.com/Chrizzly92/vibeDSO/releases).
 
